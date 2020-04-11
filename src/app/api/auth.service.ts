@@ -67,7 +67,7 @@ export class AuthService {
 
   logout() {
     this.auth0.logout({
-      returnTo: 'http://localhost:4200',
+      returnTo: 'https://angular-frontend-final-work.herokuapp.com/',
       clientID: environment.auth.clientID
     });
   }
