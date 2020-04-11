@@ -1,0 +1,65 @@
+@import '../variables/colors';
+
+.grid-container{
+  display: flex;
+  background-color: $secondary-light;
+}
+
+.account{
+  display: flex;
+  font-size: large;
+}
+
+.profile{
+  background-color: $secondary;
+}
+
+.content{
+  background-color: $secondary-light;
+  height: 100vh;
+  width: 100%;
+}
+
+.toolbar{
+  color:$text;
+  background-color: $secondary-light;
+  border-bottom: 1px solid $secondary-dark;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 83%;
+}
+
+.sidenav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width:200px;
+  width: 17%;
+  height: 100vh;
+  background: $secondary;
+}
+
+.btn{
+  color: $text;
+  font-size: 16px;
+}
+mat-icon{
+  color: $text;
+}
+.head{
+  &__text{
+    color:$primary-dark !important;
+    font-weight: bolder !important;
+    font-size: 25px !important;
+    letter-spacing: 10px;
+    text-align: center;
+  }
+}
+.link{
+  cursor: pointer;
+}
+.link:hover{
+  color: $primary-dark !important;
+  background-color: $secondary-dark;
+}
