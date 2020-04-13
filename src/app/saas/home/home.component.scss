@@ -1,0 +1,77 @@
+@import '../../../variables/colors';
+
+.landing{
+    height:90vh;
+    background-color: $secondary-light;
+    color: $text;
+    padding: 100px 13% 20px 13%;
+    text-align: center;
+}
+img{
+    height: 75%;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.ts{
+    background-color: $primary;
+    color: $text;
+    height:20vh;
+    padding: 20px 200px 20px 200px;
+}
+.pricing{
+    height:60vh;
+    background-color: $secondary;
+    color: $text;
+    padding: 100px 13% 20px 13%;
+}
+.footer{
+    height:15vh;
+    background-color: $text;
+    color: $secondary-light;
+    padding: 20px 200px 20px 200px;
+}
+h1{
+    align-self: center;
+    text-align: center;
+    color: $text;
+    font-size: 40px;
+    font-weight: bold;
+}
+h3{
+    text-align: center;
+}
+.header{
+    max-height:10vh;
+    background-color: $secondary;
+    color: $text;
+    padding: 20px 13% 20px 13%;
+}
+
+mat-card{
+    margin: 0% 10% 10% 10%;
+    height: auto;
+    width: 80%;
+}
+
+.head{
+    &__text{
+      color:$primary-dark !important;
+      font-weight: bolder !important;
+      font-size: 25px !important;
+      letter-spacing: 10px;
+      text-align: center;
+    }
+  }
+
+.action{
+    background-color: $primary;
+    width: 80%;
+    margin: 2% 10% 2% 10% !important;
+}
+
+.a{
+    background-color: $primary;
+    margin:0 37.5% 0 37.5%;
+    width:25%;
+}

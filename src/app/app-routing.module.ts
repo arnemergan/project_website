@@ -6,9 +6,13 @@ import { InvoicesComponent } from './dashboard/elements/invoices/invoices.compon
 import { StatisticsComponent } from './dashboard/elements/statistics/statistics.component';
 import { AuthGuard } from './auth.guard';
 import { CallbackComponent } from './dashboard/elements/callback/callback.component';
+import { HomeComponent } from './saas/home/home.component';
+import { SignupComponent } from './saas/signup/signup.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/dashboard',pathMatch: 'full'},
+  {path: '', redirectTo: '/home',pathMatch: 'full'},
+  {path:'home',component:HomeComponent},
+  {path:'signup',component:SignupComponent},
   {path:'callback',component:CallbackComponent},
   {path: 'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
   {path: 'invoices',component: InvoicesComponent,canActivate: [AuthGuard]},

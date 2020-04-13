@@ -1,0 +1,36 @@
+<mat-toolbar class="header">
+  <div class="head__text" (click)="toHome()">INFACT</div>
+  <span class="example-spacer"></span>
+    <a mat-button class="btn" href="https://mergan-arne.gitbook.io/final-work/">docs</a>
+    <button mat-button class="btn" (click)="auth.login()"  *ngIf="!auth.isLoggedIn"> Login </button>
+    <button mat-button class="btn" (click)="auth.logout()" *ngIf="auth.isLoggedIn"> logout </button>      
+    <button mat-button class="btn" (click)="toDashboard()" *ngIf="auth.isLoggedIn"> dashboard </button>      
+</mat-toolbar>
+<div class="landing">
+  <h1>SaaS for incoming invoices</h1>
+  <h3>Incoming invoice automation</h3>
+  <button mat-button class="a" (click)="toSignup()">sign up</button>
+  <img src="./../../../assets/header-background.png"/>
+</div>
+<div class="pricing">
+    <h1>Pricing</h1>
+    <h3>Choose your plan</h3>
+            <mat-card class="example-card">
+                <mat-card-title>10€/month</mat-card-title>
+                <mat-card-subtitle></mat-card-subtitle>
+                <mat-card-content>
+                  <mat-list role="list">
+                    <mat-list-item role="listitem">10 users</mat-list-item>
+                    <mat-list-item role="listitem">Statistics</mat-list-item>
+                    <mat-list-item role="listitem">Invoice automation</mat-list-item>
+                    <mat-list-item role="listitem">Payment module</mat-list-item>
+                  </mat-list>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-button class="action" (click)="toSignup()">sign up</button>
+                </mat-card-actions>
+              </mat-card>
+</div>
+<div class="footer">
+    
+</div>

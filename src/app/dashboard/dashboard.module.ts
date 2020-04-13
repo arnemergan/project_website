@@ -28,6 +28,7 @@ import {MatChipsModule} from '@angular/material/chips';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,17 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatChipsModule,
     NgxChartsModule,
     MatPaginatorModule,
-    MatProgressSpinnerModule
-    ]
+    MatProgressSpinnerModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    MatMenuModule,
+    MatListModule,
+    MatGridListModule,
+    LayoutModule,
+    NgxChartsModule
+      ]
 })
 export class DashboardModule { }

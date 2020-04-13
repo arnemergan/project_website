@@ -1,0 +1,27 @@
+<mat-toolbar class="header">
+    <div class="head__text" (click)="toHome()">INFACT</div>
+    <span class="example-spacer"></span>
+    <a mat-button class="btn" href="https://mergan-arne.gitbook.io/final-work/">docs</a>
+    <button mat-button class="btn" (click)="auth.login()"  *ngIf="!auth.isLoggedIn"> Login </button>
+    <button mat-button class="btn" (click)="auth.logout()" *ngIf="auth.isLoggedIn"> logout </button>      
+    <button mat-button class="btn" (click)="toDashboard()" *ngIf="auth.isLoggedIn"> dashboard </button>      
+</mat-toolbar>
+<div class="landing">
+    <mat-card>
+        <mat-card-title>
+            Sign up
+        </mat-card-title>
+        <form class="example-form" (ngSubmit)="buy()" [formGroup]="stripeTest">
+        <mat-card-content>
+            <mat-form-field appearance="outline">
+                <mat-label>Enterprise name</mat-label>
+                <input name="enterprise" matInput placeholder="Enterprise name">
+              </mat-form-field>
+              <ngx-stripe-card [options]="cardOptions" [elementsOptions]="elementsOptions"></ngx-stripe-card>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button class="action">sign up</button>
+        </mat-card-actions>
+        </form>
+    </mat-card>
+</div>
