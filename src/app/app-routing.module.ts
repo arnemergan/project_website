@@ -15,7 +15,6 @@ const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'callback',component:CallbackComponent},
   {path: 'dashboard',component: DashboardComponent,canActivate: [AuthGuard]},
-  {path: 'invoices',component: InvoicesComponent,canActivate: [AuthGuard]},
   {path: 'statistics',component:StatisticsComponent,canActivate: [AuthGuard]},
   {path: 'invoice/:id',component: InvoiceDataComponent,canActivate: [AuthGuard]}
 ];
