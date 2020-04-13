@@ -1,3 +1,43 @@
+<mat-sidenav-container class="grid-container">
+    <mat-sidenav mode="side" opened class="sidenav">
+      <mat-list>
+        <mat-list-item class="head" (click)="toHome()">
+          <a mat-line class="head__text" (click)="toHome()">INFACT </a>
+        </mat-list-item>
+        <mat-list-item class="link" (click)="toHome()">
+          <mat-icon mat-list-icon>dashboard</mat-icon>
+          <a mat-line class="btn" (click)="toHome()">Home </a>
+        </mat-list-item>
+        <mat-list-item class="link" (click)="toStatistics()">
+          <mat-icon mat-list-icon>apps</mat-icon>
+          <a mat-line class="btn"> Statistics </a>
+        </mat-list-item>
+        <mat-list-item class="link">
+          <mat-icon  mat-list-icon *ngIf="auth.isLoggedIn">lock_open</mat-icon>
+          <mat-icon  mat-list-icon *ngIf="!auth.isLoggedIn">lock</mat-icon>
+          <a mat-line class="btn" (click)="auth.login()"  *ngIf="!auth.isLoggedIn"> Login </a>
+          <a mat-line class="btn" (click)="auth.logout()" *ngIf="auth.isLoggedIn"> logout </a>        
+        </mat-list-item>
+      </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content" fullscreen>
+      <mat-toolbar class="toolbar">
+        <span *ngIf="auth.userProfile">
+          <button mat-icon-button [matMenuTriggerFor]="menu" class="profile" aria-label="Example icon-button with a menu">
+            <mat-icon>account_box</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+          <button mat-menu-item disabled>
+            <mat-icon>account_circle</mat-icon>
+            <span>{{auth.userProfile.nickname}}</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>settings_system_daydream</mat-icon>
+            <span>Settings</span>
+          </button>
+        </mat-menu></span>
+      </mat-toolbar>
+      <div class="dashboard">
 <mat-grid-list cols="8" rowHeight="20vh" class="wrapper"> 
     <mat-grid-tile [colspan]="2" [rowspan]="1">
         <mat-card class="dashboard-card total">
@@ -80,3 +120,6 @@
         </mat-card>
     </mat-grid-tile>
 </mat-grid-list>
+</div>
+</mat-sidenav-content>
+</mat-sidenav-container>

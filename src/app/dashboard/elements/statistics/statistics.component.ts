@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Statistics } from 'src/app/api/models/models';
 import { StatisticsService } from 'src/app/api/statistics.service';
+import { AuthService } from 'src/app/api/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-statistics',
@@ -50,7 +52,7 @@ export class StatisticsComponent implements OnInit {
 
   model: Statistics;
 
-  constructor(private statisticService:StatisticsService) {
+  constructor(private router: Router,private statisticService:StatisticsService,public auth: AuthService) {
    }
 
   ngOnInit(): void {
@@ -101,5 +103,12 @@ export class StatisticsComponent implements OnInit {
       ]
     }
     ];
+  }
+  toStatistics(){
+    this.router.navigate(['statistics']);
+  }
+
+  toHome(){
+    this.router.navigate(['dashboard']);
   }
 }

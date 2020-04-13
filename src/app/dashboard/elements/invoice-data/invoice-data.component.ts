@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Invoice } from 'src/app/api/models/models';
 import { FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { InvoiceService } from 'src/app/api/invoice.service';
 import { formatDate} from '@angular/common';
+import { AuthService } from 'src/app/api/auth.service';
 
 @Component({
   selector: 'app-invoice-data',
@@ -16,7 +17,7 @@ export class InvoiceDataComponent implements OnInit {
 
   model: Invoice;
   id:string;
-  constructor(private route: ActivatedRoute,private _snackBar: MatSnackBar,private invoiceService:InvoiceService) { }
+  constructor(private router: Router,private route: ActivatedRoute,private _snackBar: MatSnackBar,private invoiceService:InvoiceService,public auth: AuthService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
@@ -48,5 +49,17 @@ export class InvoiceDataComponent implements OnInit {
     this._snackBar.open(message, action, {
       duration: 2000,
     });
+  }
+  toInvoices(){
+    this.router.navigate(['invoices']);
+
+  }
+
+  toStatistics(){
+    this.router.navigate(['statistics']);
+  }
+
+  toHome(){
+    this.router.navigate(['dashboard']);
   }
 }
