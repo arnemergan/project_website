@@ -29,6 +29,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatListModule} from '@angular/material/list';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import {MatListModule} from '@angular/material/list';
     MatListModule,
     MatGridListModule,
     LayoutModule,
-    NgxChartsModule
+    NgxChartsModule,
+    RouterModule
       ]
 })
 export class DashboardModule { }
