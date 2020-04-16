@@ -8,7 +8,7 @@ import { AuthService } from './api/auth.service';
 import { SaasModule } from './saas/saas.module';
 import { NgxStripeModule } from 'ngx-stripe';
 import { MatInputModule } from '@angular/material/input';
-
+import { HashLocationStrategy, LocationStrategy  } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent
@@ -24,6 +24,7 @@ import { MatInputModule } from '@angular/material/input';
   ],
   providers: [
     AuthService,
+    {provide : LocationStrategy , useClass: HashLocationStrategy}
   ],
   bootstrap: [AppComponent]
 })
